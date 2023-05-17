@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ui version="4.0">
+    <class>DIPCD_DengLeiClass</class>
+    <widget class="QMainWindow" name="DIPCD_DengLeiClass">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1276</width>
+                <height>726</height>
+            </rect>
+        </property>
+        <property name="minimumSize">
+            <size>
+                <width>640</width>
+                <height>360</height>
+            </size>
+        </property>
+        <property name="font">
+            <font>
+                <pointsize>9</pointsize>
+                <bold>true</bold>
+            </font>
+        </property>
+        <property name="windowTitle">
+            <string>图像处理工具 作者：20101330邓磊</string>
+        </property>
+        <widget class="QWidget" name="centralWidget">
+            <widget class="QLabel" name="label_author">
+                <property name="geometry">
+                    <rect>
+                        <x>1110</x>
+                        <y>560</y>
+                        <width>171</width>
+                        <height>41</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>作者：20101330邓磊</string>
+                </property>
+            </widget>
+            <widget class="QLabel" name="label_originalImage">
+                <property name="geometry">
+                    <rect>
+                        <x>130</x>
+                        <y>20</y>
+                        <width>69</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>原图像</string>
+                </property>
+            </widget>
+            <widget class="QLabel" name="label_processImages">
+                <property name="geometry">
+                    <rect>
+                        <x>680</x>
+                        <y>30</y>
+                        <width>69</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>处理图像</string>
+                </property>
+            </widget>
+            <widget class="QLabel" name="label_imageProcessingTools">
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>550</y>
+                        <width>141</width>
+                        <height>51</height>
+                    </rect>
+                </property>
+                <property name="text">
+                    <string>图像处理工具</string>
+                </property>
+            </widget>
+            <widget class="QLabel" name="label_showOriginalImage">
+                <property name="geometry">
+                    <rect>
+                        <x>130</x>
+                        <y>70</y>
+                        <width>461</width>
+                        <height>461</height>
+                    </rect>
+                </property>
+                <property name="frameShape">
+                    <enum>QFrame::Box</enum>
+                </property>
+                <property name="lineWidth">
+                    <number>2</number>
+                </property>
+                <property name="text">
+                    <string />
+                </property>
+            </widget>
+            <widget class="QLabel" name="label_showProcessImage">
+                <property name="geometry">
+                    <rect>
+                        <x>680</x>
+                        <y>70</y>
+                        <width>461</width>
+                        <height>461</height>
+                    </rect>
+                </property>
+                <property name="frameShape">
+                    <enum>QFrame::Box</enum>
+                </property>
+                <property name="lineWidth">
+                    <number>2</number>
+                </property>
+                <property name="text">
+                    <string />
+                </property>
+            </widget>
+        </widget>
+        <widget class="QMenuBar" name="menuBar">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>1276</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>9</pointsize>
+                    <bold>false</bold>
+                </font>
+            </property>
+            <widget class="QMenu" name="menu_file">
+                <property name="title">
+                    <string>文件</string>
+                </property>
+                <addaction name="action_openFile" />
+                <addaction name="action_savaFile" />
+                <addaction name="action_quitFile" />
+                <addaction name="separator" />
+                <addaction name="action_quit" />
+            </widget>
+            <widget class="QMenu" name="menu_imageProcessing">
+                <property name="title">
+                    <string>图像处理</string>
+                </property>
+                <addaction name="action_grayscale" />
+                <addaction name="action_binarization" />
+                <addaction name="action_3x3meanFiltering" />
+                <addaction name="action_3x3medianFiltering" />
+                <addaction name="action_sharpeningOfLaplace4" />
+                <addaction name="action_edgaDetection" />
+                <addaction name="action_histogramCalculationAndDisplay" />
+            </widget>
+            <widget class="QMenu" name="menu_tool">
+                <property name="title">
+                    <string>工具</string>
+                </property>
+                <addaction name="action_undoProcessing" />
+            </widget>
+            <widget class="QMenu" name="menu_help">
+                <property name="title">
+                    <string>帮助</string>
+                </property>
+                <addaction name="action_documentation" />
+            </widget>
+            <widget class="QMenu" name="menu_about">
+                <property name="title">
+                    <string>关于</string>
+                </property>
+                <addaction name="action_contactAuthor" />
+            </widget>
+            <widget class="QMenu" name="menu_videoProcessing">
+                <property name="title">
+                    <string>视频处理</string>
+                </property>
+                <addaction name="action_grayscaleVideo" />
+                <addaction name="action_faceRecognition" />
+            </widget>
+            <addaction name="menu_file" />
+            <addaction name="menu_imageProcessing" />
+            <addaction name="menu_videoProcessing" />
+            <addaction name="menu_tool" />
+            <addaction name="menu_help" />
+            <addaction name="menu_about" />
+        </widget>
+        <widget class="QToolBar" name="mainToolBar">
+            <property name="font">
+                <font>
+                    <pointsize>9</pointsize>
+                    <bold>true</bold>
+                </font>
+            </property>
+            <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonTextUnderIcon</enum>
+            </property>
+            <attribute name="toolBarArea">
+                <enum>TopToolBarArea</enum>
+            </attribute>
+            <attribute name="toolBarBreak">
+                <bool>false</bool>
+            </attribute>
+            <addaction name="action_openFile" />
+            <addaction name="action_savaFile" />
+            <addaction name="action_quitFile" />
+            <addaction name="separator" />
+            <addaction name="action_undoProcessing" />
+            <addaction name="separator" />
+            <addaction name="action_grayscale" />
+            <addaction name="action_binarization" />
+            <addaction name="action_3x3meanFiltering" />
+            <addaction name="action_3x3medianFiltering" />
+            <addaction name="action_sharpeningOfLaplace4" />
+            <addaction name="action_edgaDetection" />
+            <addaction name="action_histogramCalculationAndDisplay" />
+            <addaction name="separator" />
+            <addaction name="action_grayscaleVideo" />
+            <addaction name="action_faceRecognition" />
+            <addaction name="separator" />
+            <addaction name="action_documentation" />
+            <addaction name="separator" />
+            <addaction name="action_contactAuthor" />
+            <addaction name="action_quit" />
+        </widget>
+        <widget class="QStatusBar" name="statusBar" />
+        <action name="action_openFile">
+            <property name="icon">
+                <iconset>
+                    <normaloff>Resource Files/openFile.svg</normaloff>Resource Files/openFile.svg
+                </iconset>
+            </property>
+            <property name="text">
+                <string>打开文件</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+O</string>
+            </property>
+        </action>
+        <action name="action_quitFile">
+            <property name="icon">
+                <iconset>
+                    <normaloff>Resource Files/quitFile.svg</normaloff>Resource Files/quitFile.svg
+                </iconset>
+            </property>
+            <property name="text">
+                <string>关闭文件</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+C</string>
+            </property>
+        </action>
+        <action name="action_grayscale">
+            <property name="text">
+                <string>灰度化</string>
+            </property>
+            <property name="iconText">
+                <string>图像灰度化</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+G</string>
+            </property>
+        </action>
+        <action name="action_binarization">
+            <property name="text">
+                <string>二值化</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+B</string>
+            </property>
+        </action>
+        <action name="action_3x3meanFiltering">
+            <property name="text">
+                <string>3×3 均值滤波</string>
+            </property>
+            <property name="iconText">
+                <string>均值滤波</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+M</string>
+            </property>
+        </action>
+        <action name="action_3x3medianFiltering">
+            <property name="text">
+                <string>3×3 中值滤波</string>
+            </property>
+            <property name="iconText">
+                <string>中值滤波</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+Shift+M</string>
+            </property>
+        </action>
+        <action name="action_sharpeningOfLaplace4">
+            <property name="text">
+                <string>拉普拉斯 4 领域锐化</string>
+            </property>
+            <property name="iconText">
+                <string>领域锐化</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+S</string>
+            </property>
+        </action>
+        <action name="action_edgaDetection">
+            <property name="text">
+                <string>边缘检测</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+E</string>
+            </property>
+        </action>
+        <action name="action_histogramCalculationAndDisplay">
+            <property name="text">
+                <string>直方图计算与显示</string>
+            </property>
+            <property name="iconText">
+                <string>直方图</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+Shift+H</string>
+            </property>
+        </action>
+        <action name="action_savaFile">
+            <property name="icon">
+                <iconset>
+                    <normaloff>Resource Files/savaFile.svg</normaloff>Resource Files/savaFile.svg
+                </iconset>
+            </property>
+            <property name="text">
+                <string>保存文件</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+S</string>
+            </property>
+        </action>
+        <action name="action_undoProcessing">
+            <property name="icon">
+                <iconset>
+                    <normaloff>Resource Files/undoProcessing.svg</normaloff>Resource Files/undoProcessing.svg
+                </iconset>
+            </property>
+            <property name="text">
+                <string>撤销处理</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+Z</string>
+            </property>
+        </action>
+        <action name="action_documentation">
+            <property name="icon">
+                <iconset>
+                    <normaloff>Resource Files/documentation.svg</normaloff>Resource Files/documentation.svg
+                </iconset>
+            </property>
+            <property name="text">
+                <string>说明文档</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+H</string>
+            </property>
+        </action>
+        <action name="action_contactAuthor">
+            <property name="icon">
+                <iconset>
+                    <normaloff>Resource Files/contactAuthor.svg</normaloff>Resource Files/contactAuthor.svg
+                </iconset>
+            </property>
+            <property name="text">
+                <string>联系作者</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+A</string>
+            </property>
+        </action>
+        <action name="action_quit">
+            <property name="icon">
+                <iconset>
+                    <normaloff>Resource Files/quit.svg</normaloff>Resource Files/quit.svg
+                </iconset>
+            </property>
+            <property name="text">
+                <string>退出</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+Q</string>
+            </property>
+        </action>
+        <action name="action_grayscaleVideo">
+            <property name="text">
+                <string>灰度化</string>
+            </property>
+            <property name="iconText">
+                <string>视频灰度化</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+Shift+G</string>
+            </property>
+        </action>
+        <action name="action_faceRecognition">
+            <property name="text">
+                <string>人脸识别</string>
+            </property>
+            <property name="shortcut">
+                <string>Ctrl+F</string>
+            </property>
+        </action>
+    </widget>
+    <layoutdefault spacing="6" margin="11" />
+    <resources>
+        <include location="DIPCD_DengLei.qrc" />
+    </resources>
+    <connections />
+</ui>
